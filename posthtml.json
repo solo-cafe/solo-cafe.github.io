@@ -1,0 +1,8 @@
+{
+  "input": "**/*.(html|css)",
+  "output": "dist",
+  "plugins": {
+    "posthtml-modules": {},
+    "htmlnano": {}
+  }
+}

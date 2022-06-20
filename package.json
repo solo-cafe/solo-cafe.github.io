@@ -1,0 +1,26 @@
+{
+  "name": "solocafe.club",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:solo-cafe/solo-cafe.github.io.git",
+  "author": "seblaz <sebastian.blazquez96@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "serve src",
+    "build": "rm -rf dist && yarn build:html && cp -R src/assets dist/assets && cp -R src/js dist/js",
+    "build:images": "imagemin src/assets/**/* --out-dir=dist/images",
+    "build:html": "posthtml -c posthtml.json --root src -a"
+  },
+  "devDependencies": {
+    "cssnano": "^5.1.12",
+    "htmlnano": "^2.0.2",
+    "imagemin-cli": "^7.0.0",
+    "postcss": "^8.4.14",
+    "posthtml": "^0.16.6",
+    "posthtml-cli": "^0.10.0",
+    "posthtml-modules": "^0.9.0",
+    "serve": "^13.0.2",
+    "terser": "^5.14.1"
+  }
+}
