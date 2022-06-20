@@ -8,7 +8,9 @@
   "private": true,
   "scripts": {
     "start": "serve src",
-    "build": "rm -rf dist && yarn build:html && cp -R src/assets dist/assets && cp -R src/js dist/js",
+    "build": "rm -rf dist && yarn build:html && yarn build:js && yarn build:img",
+    "build:js": "cp -R src/js dist/js",
+    "build:img": "cp -R src/assets dist/assets",
     "build:images": "imagemin src/assets/**/* --out-dir=dist/images",
     "build:html": "posthtml -c posthtml.json --root src -a"
   },
